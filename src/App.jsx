@@ -7,6 +7,7 @@ import Login from './Login';
 import Signup from './Signup';
 import axiosInstance from './axiosInstance';
 import WriteBoard from './WriteBoard';
+import BoardList from './BoardList';
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -42,7 +43,7 @@ function App() {
       }}>테스트</button>
 
       <Routes>
-        <Route path='/' element={<h1>인덱스 페이지</h1>} />
+        <Route path='/' element={<BoardList />} />
         <Route path='/login' element={<Login setAuth={setAuth} />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/write' element={<WriteBoard userInfo={userInfo} />} />
