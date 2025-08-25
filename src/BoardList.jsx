@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "./axiosInstance";
+import { Link } from "react-router-dom";
 
 const BoardList = () => {
   const [boardList, setBoardList] = useState();
@@ -33,7 +34,11 @@ const BoardList = () => {
               return (
                 <tr key={i}>
                   <td>{board.id}</td>
-                  <td>{board.title}</td>
+                  <td>
+                    <Link to={`/board/${board.id}`}>
+                    {board.title}
+                    </Link>
+                  </td>
                   <td>{board.writer.username}</td>
                 </tr>
               )

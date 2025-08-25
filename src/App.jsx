@@ -8,6 +8,7 @@ import Signup from './Signup';
 import axiosInstance from './axiosInstance';
 import WriteBoard from './WriteBoard';
 import BoardList from './BoardList';
+import BoardDetail from './BoardDetail';
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -47,6 +48,7 @@ function App() {
         <Route path='/login' element={<Login setAuth={setAuth} />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/write' element={<WriteBoard userInfo={userInfo} />} />
+        <Route path='/board/:id' element={<BoardDetail userInfo={userInfo} />} />
       </Routes>
 
     </>
